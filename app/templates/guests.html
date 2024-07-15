@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Guests{% endblock %}
+{% block content %}
+    <h2>Your Guests</h2>
+    <a href="{{ url_for('new_guest') }}" class="btn btn-primary">Add Guest</a>
+    <ul>
+        {% for guest in guests %}
+            <li>{{ guest.name }} - {{ guest.email }} ({{ guest.category }})</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
